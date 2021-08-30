@@ -39,19 +39,19 @@ def FirstKelements(arr):
     
 
 def get_recommendations(title):
-    cosine_sim = cosine_similarity(count_matrix, count_matrix)
+    #cosine_sim = cosine_similarity(count_matrix, count_matrix)
     idx = indices[title]
     try:
         idx = idx[-1]
     except: 
         idx = idx
-    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = list(enumerate(cosine_sim2[idx]))
     ## print(sim_scores[5]) = (5, 0.025334729596907)
     ## print(sim_scores[1]) = (1, 0.06917144638660747)
     #sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     #print(sim_scores)
-    print(indices[title])
-    print(title)
+    #print(indices[title])
+    #print(title)
     sim_scores = FirstKelements(sim_scores)
     sim_scores.reverse()
     sim_scores = sim_scores[1:]
